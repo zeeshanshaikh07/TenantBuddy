@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% include "includes/header.html" %}
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenantBuddy</title>
+</head>
+<style>
+    body {
+        background-image: url(https://i.imgur.com/3JyslVz.jpg);
+        background-size: 100%;
+        background-position: 0px 90 px;
+        background-repeat: no-repeat;
+        transition: all linear 2s;
+
+
+
+    }
+
+    @media only screen and (min-width: 512px) {
+        body {
+            background-image: url(https://i.imgur.com/g55m6EJ.jpeg);
+            background-size: cover;
+            background-position: center;
+            transition: all linear 2s;
+
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        body {
+            background-image: url(https://i.imgur.com/Owy5FX0.jpg);
+            background-size: 100%;
+            background-position: 0px 80px;
+            transition: all linear 2s;
+            background-repeat: no-repeat;
+        }
+    }
+</style>
+
+<body>
+
+    <div>
+        <div class=" text-2xl  sm:text-3xl md:text-5xl font-sans font-bold text-gray-400 ">
+            <div class="flex text-center mt-96 justify-center">
+                <h5><span class="entry"></span></h5>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+{% include "includes/footer.html" %}
+
+
+</html>

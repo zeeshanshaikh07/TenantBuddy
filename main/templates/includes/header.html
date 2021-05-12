@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<!-- Import start -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<!-- Animate.Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+<!-- TailWind Css -->
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+<!-- Style Css -->
+<style>
+    .grad-bar {
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 400% 400%;
+        -webkit-animation: gradbar 8s ease infinite;
+        -moz-animation: gradbar 8s ease infinite;
+        animation: gradbar 8s ease infinite;
+    }
+
+    @-webkit-keyframes gradbar {
+        0% {
+            background-position: 0% 50%
+        }
+
+        50% {
+            background-position: 100% 50%
+        }
+
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @-moz-keyframes gradbar {
+        0% {
+            background-position: 0% 50%
+        }
+
+        50% {
+            background-position: 100% 50%
+        }
+
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @keyframes gradbar {
+        0% {
+            background-position: 0% 50%
+        }
+
+        50% {
+            background-position: 100% 50%
+        }
+
+        100% {
+            background-position: 0% 50%
+        }
+    }
+</style>
+<!-- Import end -->
+
+
+<!-- <title>TenantBuddy</title> -->
+<link rel="icon" href="{% static 'images/home.png' %}" type="image/icon type">
+<header class=" font-sans">
+    <div class="overflow-hidden fixed z-10 top-0 w-full shadow-lg  ">
+        <div class="grad-bar"> </div>
+        <div
+            class=" flex  justify-center sm:justify-start md:justify-between transition-all duration-600  bg-gradient-to-r from-green-100 to-blue-300 ease">
+            <div class="h-20  ">
+                {% if login %}
+                <a href="/owner/{{key}}">
+                    <img class=" m-2 h-14" src="https://i.imgur.com/JOZuDNL.png" alt="LOGO">
+                </a>
+
+                {% endif %}
+                {% if not login %}
+                <a href="/index">
+                    <img class=" m-2 h-14" src="https://i.imgur.com/JOZuDNL.png" alt="LOGO">
+                </a>
+
+                {% endif %}
+
+            </div>
+            <!-- Top Navbar -->
+            {% if not login %}
+
+            <div
+                class="md:flex  transition-opacity justify-end	 duration-300 ease-in-out  hidden   px-3  font-semibold  mt-8">
+                <a class=" transition-all  duration-300 ease-in-out px-2 text-xl text-decoration-none hover:text-blue-500 "
+                    href="/index"> Home</a>
+                <a class="transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
+                    href="/room"> Rooms</a>
+                <a class="transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
+                    href="/login"> Owner</a>
+                <a class=" transition-all  duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
+                    href="/about"> About Us</a>
+
+
+            </div>
+            {% endif %}
+
+            {% if login %}
+            <div
+                class="md:flex  transition-opacity justify-end	 duration-300 ease-in-out  hidden   px-3  font-semibold  mt-8">
+                <a class=" transition-all text-decoration-none duration-300 ease-in-out px-2 text-xl hover:text-blue-500 "
+                    href="/owner/{{key}}"> Home</a>
+                <a class="transition-all duration-300 text-decoration-none ease-in-out px-2 text-xl hover:text-blue-500"
+                    href="/addroom/{{key}}">
+                    Add
+                    Room</a>
+                <a class="transition-all duration-300 ease-in-out px-2 text-xl text-decoration-none hover:text-blue-500"
+                    href="/profile/{{key}}">
+                    Profile</a>
+                <a class=" transition-all duration-300 ease-in-out px-2 text-xl hover:text-blue-500 text-decoration-none"
+                    href="/index"> Log Out
+                </a>
+
+
+            </div>
+            {% endif %}
+            <!-- Bottom navbar -->
+            {% if not login %}
+
+            <div
+                class="animate__animated animate__slideInUp overflow-hidden fixed flex justify-center h-14 font-semibold  space-x-3 sm:space-x-10 inset-x-0 bottom-0  bg-gradient-to-r from-green-100 to-blue-300 shadow-lg md:hidden">
+                <a class=" transition-all duration-300 ease-in-out  mt-3 text-lg hover:text-blue-500 text-decoration-none "
+                    href="/index">
+                    Home</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/room">
+                    Rooms</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/login">
+                    Owner</a>
+
+                <a class=" transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/about">
+                    About </a>
+
+            </div>
+            {% endif %}
+
+            {% if login %}
+            <div
+                class="animate__animated animate__slideInUp overflow-hidden fixed flex justify-center h-14 font-semibold  space-x-3 sm:space-x-10 inset-x-0 bottom-0  bg-gradient-to-r from-green-100 to-blue-300 shadow-lg md:hidden">
+                <a class=" transition-all duration-300 ease-in-out  mt-3 text-lg hover:text-blue-500 text-decoration-none "
+                    href="/owner/{{key}}">
+                    Home</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/addroom/{{key}}">
+                    Add Rooms</a>
+                <a class="transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/profile/{{key}}">
+                    Profile</a>
+
+                <a class=" transition-all duration-300 ease-in-out text-decoration-none mt-3 text-lg hover:text-blue-500"
+                    href="/index">
+                    Log Out </a>
+
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+</header>
+
+<div class=" z-20 overflow-visible	 pb-2   animate__animated animate__delay-4s animate__fadeOut">
+    <div class="bg-yellow-200 text-xl rounded px-4 m-auto animate__animated animate__backInDown  "
+        style="width: max-content">
+
+        <strong class=" ">{{ error }}</strong>
+    </div>
+</div>
+
+
+</html>
