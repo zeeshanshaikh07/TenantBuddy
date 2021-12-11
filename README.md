@@ -1,0 +1,2 @@
+# TenantBuddy
+We are here to give seamless access to the affordable rooms for the needy peoples. The name of the project is “TENANTBUDDY”. This is important because the people like students and bachelors always have to go Door to Door in search of rooms. We will let the people find all the available rooms in their nearby area at an affordable price range on their Mobile phone or computer. Our main focus is on those people who are outsiders for that local area and are less known about that place.
